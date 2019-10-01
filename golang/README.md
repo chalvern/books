@@ -9,5 +9,5 @@ Go 是一个完全开源的编程语言，用于构建简单、可靠且高效�
 
 ## 材料列表
 
-* [effective go](./golang/effective_go.md) effective go 翻译
-* [go spec](./golang/go_spec.md) go 语言规范翻译
+* [effective go](./effective_go.md) effective go 翻译
+* [go spec](./go_spec.md) go 语言规范翻译
