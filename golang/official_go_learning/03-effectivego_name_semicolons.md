@@ -1,5 +1,7 @@
 [effective go](https://golang.google.cn/doc/effective_go.html)
 
+[本文的视频地址](https://www.bilibili.com/video/av70193421/)
+
 # 名称
 
 和其他编程语言类似，命名在 Go 语言中也很讲究。Go 中的命名甚至属于语法的一部分：名称的首字母是否大写决定这个名称在包外的可见性。因此很有必要花一些时间来了解 Go 程序中的命名规范。

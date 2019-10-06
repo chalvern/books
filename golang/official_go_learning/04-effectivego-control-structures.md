@@ -1,3 +1,5 @@
+[effective go](https://golang.google.cn/doc/effective_go.html)
+
 # 控制结构
 Go 语言中的控制结构和 C 语言有点像，但是也有很多不一样的地方：Go 语言 ① 没有 do 和 while 循环语句，只有一个通用的 for 循环语句；② switch 的用法比 C 语言中 switch 的用法更灵活；③ if 和 switch 可以像 for 语句那样接收一个初始化语句；④ break 和 continue 语句可以通过一个可选的标签来指定 break 和 continue 的位置；⑤ Go 语言可以根据数值的类型选择执行的逻辑分支；⑥ Go 还多出来一个新的控制结构 select，可以用来做多路通信分发器。和 C 语言相比， Go 的语法也有一些不同的地方：for, if, switch, select 等控制语句后面不需要小括号，且他们的执行体都必须用大括号括起来。
 
