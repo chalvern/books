@@ -1,3 +1,5 @@
+[effective go](https://golang.google.cn/doc/effective_go.html)
+
 # 函数
 
 ## 多返回值
