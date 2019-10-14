@@ -1,5 +1,7 @@
 [effective go](https://golang.google.cn/doc/effective_go.html)
 
+[本文的视频地址](https://www.bilibili.com/video/av71150528)
+
 # 函数
 
 ## 多返回值
