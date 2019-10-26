@@ -1342,9 +1342,19 @@ Now we have the missing piece we needed to explain the design of the `append` bu
 func append(slice []T, elements ...T) []T
 ```
 
+接下来我们继续聊内建函数 `append`的相关内容。内建函数 `append` 的声明方式和我们上面自定义的 `Append` 函数不同，如下面的形式：
+
+```go
+func append(slice []T, elements ...T) []T
+```
+
 where *T* is a placeholder for any given type. You can't actually write a function in Go where the type `T` is determined by the caller. That's why `append` is built in: it needs support from the compiler.
 
+这里的 *T* 是一个占位符，用来表示任意给定的类型。实际上，在 Go 语言中我们不能写一个带泛型的函数，这也是 `append` 是内建函数的原因——它需要编译器层面的支持。
+
 What `append` does is append the elements to the end of the slice and return the result. The result needs to be returned because, as with our hand-written `Append`, the underlying array may change. This simple example
+
+`append` 做的事情就是在一个切片的尾部追加元素，然后返回追加以后的结果。`append` 函数必须要返回结果，原因就像我们手写的 `Append` 函数一样，在追加过程中，切片底层的数组可能会发生变化，此时必须通过返回结果来通知这种变化。
 
 ```go
 x := []int{1,2,3}
@@ -1354,7 +1364,11 @@ fmt.Println(x)
 
 prints `[1 2 3 4 5 6]`. So `append` works a little like `Printf`, collecting an arbitrary number of arguments.
 
+上面的例子打印出 `[1 2 3 4 5 6]`。一定程度上可以认为 `append` 的传参方式和 `Printf` 有点像，可以传入任意多数目的参数。
+
 But what if we wanted to do what our `Append` does and append a slice to a slice? Easy: use `...` at the call site, just as we did in the call to `Output` above. This snippet produces identical output to the one above.
+
+如果想使用 `append` 函数把一个切片追加到另一个切片上面，就必须使用 `...` 运算符，类似上面中 `Output` 展示的用法。下面的代码输出的内容和上面的代码输出的内容是一样的。
 
 ```go
 x := []int{1,2,3}
@@ -1364,6 +1378,8 @@ fmt.Println(x)
 ```
 
 Without that `...`, it wouldn't compile because the types would be wrong; `y` is not of type `int`.
+
+在上面的例子中，如果不带 `...`，代码时没有办法编译通过的，因为 `y` 的类型是一个切片而不是需要的 `int`。
 
 ## Initialization（初始化）
 
