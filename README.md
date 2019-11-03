@@ -7,3 +7,6 @@
 ## Golang
 * [effective go](./golang/effective_go.md) effective go 翻译
 * [go spec](./golang/go_spec.md) go 语言规范翻译
+
+* [effective go 教案目录](./golang/official_go_learning)
+* [effective go 视频教程(bilibili)](https://space.bilibili.com/425571569)
