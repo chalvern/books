@@ -1,5 +1,6 @@
 [effective go](https://golang.google.cn/doc/effective_go.html)
 
+[本文的视频地址](https://www.bilibili.com/video/av74451767)
 
 # Initialization（初始化）
 
