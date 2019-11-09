@@ -1606,7 +1606,7 @@ func (s Sequence) String() string {
 
 The `String` method of `Sequence` is recreating the work that `Sprint` already does for slices. (It also has complexity O(N²), which is poor.) We can share the effort (and also speed it up) if we convert the `Sequence` to a plain `[]int` before calling `Sprint`.
 
-`Sequence` 的 `String` 方法一直在重复做 `Sprint` 做完的事情（复杂度为 O(N²)）。如果调用 `Sprint` 前如果我们把 `Sequence` 转换为普通的 `[]int`，可以避免重复的工作（会加快速度）。
+`Sequence` 的 `String` 方法一直在重复做 `Sprint` 做完的事情（复杂度为 O(N²)）。如果调用 `Sprint` 前如果我们把 `Sequence` 转换为普通的 `[]int` 类型的值，如此可以避免很多的重复工作（同时会加快速度）。
 
 ```go
 func (s Sequence) String() string {
@@ -1720,7 +1720,7 @@ In such cases, the constructor should return an interface value rather than the 
 
 A similar approach allows the streaming cipher algorithms in the various `crypto` packages to be separated from the block ciphers they chain together. The `Block` interface in the `crypto/cipher` package specifies the behavior of a block cipher, which provides encryption of a single block of data. Then, by analogy with the `bufio` package, cipher packages that implement this interface can be used to construct streaming ciphers, represented by the `Stream` interface, without knowing the details of the block encryption.
 
-同样的方式，允许不同 `crypto` 包中的流密码算法可以与把它们链接在一起的块加密算法分开。在 `crypto/cipher` 包中的 `Block` 接口限定了块加密算法的行为，它可以对某个独立的数据块进行加密。然后，和 `bufio` 包相似，实现 `Block` 接口的加密包可以被用来创建流加密器，并且以 `Stream` 接口类型的数据返回，从而封装了块密码算法的细节，把使用者的注意力解放出来。
+同样的方式，允许不同 `crypto` 包中的流密码算法可以与把它们链接在一起的块加密算法分开。在 `crypto/cipher` 包中的 `Block` 接口限定了块加密算法的行为，它可以对某个独立的数据块进行加密。然后，和 `bufio` 包中使用 `io.Reader` 和 `io.Writer` 的做法类似，实现 `Block` 接口的加密包可以被用来创建流加密器，并且以 `Stream` 接口类型的数据返回，从而封装了块密码算法的细节，把使用者的注意力解放出来。
 
 The `crypto/cipher` interfaces look like this:
 
