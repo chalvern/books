@@ -11,8 +11,6 @@
 
 在很多环境中，并发编程都不容易；为了确保正确访问共享变量，里面需要注意很多的实现细节。Go 鼓励一种不同的编程方式：避免直接在不同的线程间共享变量，而是通过信道来共享变量的值。在任何时间点只有一个协程有权访问变量的值；在设计上就杜绝了数据竞争的情况。为了鼓励这种共享变量的方式，它还有一句口号：**不要通过共享内存进行通信，相反，通过通信来共享内存**。
 
-This approach can be taken too far. Reference counts may be best done by putting a mutex around an integer variable, for instance. But as a high-level approach, using channels to control access makes it easier to write clear, correct programs.
-
 当然，这种“以通信的方式共享变量”的方式也不是万能的。比如，引用计数的最佳实现方式依然是给一个整数添加一个互斥锁的方式。但是作为一种高级别方式，使用信道来控制共享变量的访问能够让开发者更容易写出简明正确的代码。
 
 那么该怎么思考这个模型呢？假设我们有一个独立线程的程序，它只运行在一个 CPU 核上，这种情况下显然没有必要进行任何同步。现在思考有另一个类似的实例，它也是独立线程的，而且也只允许在一个 CPU 核上，这个实例也不需要任何的同步。然后，我们让这两个线程进行通信；如果通信方式是同步的，那么这两个独立的线程之间就不需要其他的同步了。Unix 里的 Pipline（管道） 模式就属于类似的模型。虽然 Go 解决并发的解决方案源自 Hoare 的CSP（通信序列过程）模型，但是它也可以看做是 Unix 管道的带类型安全限定的通用版本。
