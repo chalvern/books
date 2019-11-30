@@ -163,4 +163,4 @@ if pos == 0 {
 
 
 
-## 【effective go 系列结束】
+## 【effective go 全篇翻译】
