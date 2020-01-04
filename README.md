@@ -4,9 +4,13 @@
 如果是英文材料，会考虑翻译 ^_^~
 
 
-## Golang
-* [effective go](./golang/effective_go.md) effective go 翻译
-* [go spec](./golang/go_spec.md) go 语言规范翻译
+## Go
+- [目录](./go) Go 主目录
 
-* [effective go 教案目录](./golang/official_go_learning)
+重点推荐下面几个材料：
+* [effective go 教案目录](./go/official_go_learning)
 * [effective go 视频教程(bilibili)](https://space.bilibili.com/425571569)
+
+
+## Java
+- [目录](./java) Java 主目录
