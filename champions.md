@@ -5,6 +5,8 @@
 这里我尝试着把几个明确的**方向点**列出来，作为自己“迷茫”时候的一个行为参考。
 
 - [ ] 坚持锻炼身体
-- [ ] 翻译学习 [Go 的官方文档](https://golang.google.cn/doc/)材料
-- [ ] 翻译学习 [Java 语言规范和虚拟机规范](https://docs.oracle.com/javase/specs/index.html)文档
+- [ ] 编写编程故事系列科普文
+- [ ] 翻译学习 [Python官方文档](https://www.python.org/doc/)
+- [ ] 翻译学习 [Go的官方文档](https://golang.google.cn/doc/)材料
+- [ ] 翻译学习 [Java语言规范和虚拟机规范](https://docs.oracle.com/javase/specs/index.html)文档
 - [ ] 解算法题目
