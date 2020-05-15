@@ -33,4 +33,6 @@ sudo apt install git
 
 为了实现可追溯的链条
 
+![git命令图示](./imgs/003_git_concepts_02.png "Git命令及各环节流转")
+
 ### 在 vscode 中使用 git
