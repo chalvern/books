@@ -1,11 +1,11 @@
 
-## 安装 git 并简单使用。
+# 安装 git 并简单使用。
 
-### 下载 git
+## 下载并安装 git
 
 在 ubuntu 中下载安装 git 还是比较简单的，
 
-我们可以打开 terminal 终端，首先敲击 `git` 命令，然后 console 会提示我们“尚未安装 git”，并且给出 `sudo apt install git` 的命令，这个时候我们只需要复制这条命令，然后粘贴到命令行执行就可以了。
+我们可以打开 terminal 终端，首先敲击 `git` 命令，如果我们系统还没有安装 git， console 会提示我们“尚未安装 git”，并且给出 `sudo apt install git` 的命令，这个时候我们只需要复制这条命令，然后粘贴到命令行执行就可以了。
 
 ```bash
 sudo apt install git 
@@ -16,6 +16,8 @@ sudo apt install git
 
 安装完成之后， git 就可以作为我们的一个工具来使用了。
 
+## Git 概论
 
+对于一个完整的项目来说，向外提供一套完整的服务，可能包含了很多的模块，
 
 ### 在 vscode 中使用 git
