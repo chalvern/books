@@ -8,6 +8,10 @@
 * [后端专题教案](./backend)
 * [后端专题扯谈](./backend/chats)
 
+## python
+- [目录](./python) python 主目录
+- [python.org](./python/org) 官网的翻译或注解
+
 ## Go
 - [目录](./go) Go 主目录
 
