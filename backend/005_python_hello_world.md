@@ -33,9 +33,36 @@
 为了适应终端命令行，我们采用命令行的方式下载并安装。
 
 1. 首先选择一个合适的目录，然后从官网找到对应的链接后复制，通过 `wget https://www.python.org/ftp/python/3.8.3/Python-3.8.3.tgz` 进行下载。
+
 1. 下载完成后得到的是一个为方便传输的压缩包，需要我们把它解压缩，通过在当前目录执行 `tar -xzf Python-3.8.3.tgz` 即可完成，在当前目录生成一个 `Python-3.8.3` 的目录。
-1. 我们可以通过 `code Python-3.8.3` 来打开对应的目录，简单预览一下 python 的源码。
-    1. python是基于 c 语言进行开发的，是不是觉得很神奇 ^_^；
-    1. 查看对应的 README，
+
+1. 我们可以通过 `code Python-3.8.3` 来打开对应的目录，简单预览一下 python 的源码项目（源码阅读一般流程）。
+
+    1. 大概浏览一下，咦，发现 python 源码库里有好多 c 语言文件，可以知道 python 是基于 c 语言进行开发的，是不是很神奇 ^_^；
+
+    1. 查看对应的 README，可以看到 源码库中有一个 README.rst 文件，查看一遍说了什么（英文学习多么重要啊）。我们目前只关注安装相关的内容，因此找到一段命令做参考，并看到有 `./configure --help`，那我们有必要探索一番。（在命令行环境多打 `--help` 是一个好习惯）
+
+    1. 其他的我们暂时不关注，先放着不管，不过可以看到原来一个牛x的项目是这个样子的。
+
+1. 通过 `./configure --help` 查看配置项，然后通过 `./configure --prefix=$HOME/software/mypy` 进行配置；也可以有选择地添加建议的参数，比如添加优化参数保证使用所有稳定的优化方案 `./configure --prefix=$HOME/software/mypy --enable-optimizations`。
+
+1. 通过 `make` 和 `make install` 来编译并安装源码。在整个过程中可能会有一些警告的提示或者错误的提示，静待看最后的总结报告。
+
+1. 安装依赖（整个需要我们通过比较久的经验做积累才可以慢慢理解为什么需要这些依赖）。这里我积累了几个必要的，大家先安装一下。如果未来在项目开发过程中使用到了其他的依赖，则可以按照类似的步骤进行安装。
+
+    1. 通过 `sudo apt install zlib1g.dev` 安装 zlib 依赖（整个是在安装 python 的时候就会需要）
+    
+    1. 通过 `sudo apt install libssl-dev` 安装 ssl 依赖（编写 web 相关的服务的时候会用到）
+
+    1. 通过 `sudo apt install libffi-dev` 安装 libffi 依赖（当 pip install 的时候会用到）
+
+1. 重新通过 `./configure --prefix=$HOME/software/mypy` 来配置生成对应的 make 文件。并通过 `make` 和 `make install` 编译安装。
+
+1. 安装完成以后，就可以通过 `~/software/mypy/bin/python3` 和 `~/software/mypy/bin/pip3`把玩了。
+
+1. 为了便利性，我们可以把新安装的 python 的 bin 目录添加到 PATH 中去，这样就可以直接使用 `python3` 和 `pip3` 命令了。
 
 
+## 小结
+
+本小节介绍了 Python 的 helloworld，首先介绍利用 ubuntu 原带的 python 作为解释器，然后重点带大家安装自己的 python 解释器。并使用自己安装的解释器执行了 hellworld 脚本。
